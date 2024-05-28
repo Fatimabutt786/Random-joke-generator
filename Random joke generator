@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Joke Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ecf0f1;
+            color: #34495e;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #3498db;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .joke {
+            font-size: 20px;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .joke-container:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Joke Generator</h1>
+    <div class="joke" id="joke-display"></div>
+    <button onclick="reloadJoke()">Reload Joke</button>
+
+    <script>
+        const jokes = [
+            "Why don't scientists trust atoms? B ecause they make up everything.",
+            "Did you hear about the mathematician who's afraid of negative numbers? He'll stop at nothing to avoid them.",
+            "Parallel lines have so much in common. It's a shame they'll never meet.",
+            "Why was the math book sad? Because it had too many problems.",
+            "How do you organize a space party? You 'planet'!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+            "What do you call a bear with no teeth? A gummy bear.",
+            "I used to play piano by ear, but now I use my hands.",
+            "Why don't skeletons fight each other? They don't have the guts.",
+             "Why don't skeletons go to scary movies? They don't have the guts.",
+            "I'm reading a book on anti-gravity. It's impossible to put down!",
+            "Why did the tomato turn red? Because it saw the salad dressing!",
+            "What did one ocean say to the other ocean? Nothing, they just waved.",
+            "Why don't oysters donate to charity? Because they're shellfish.",
+            "Why did the bicycle fall over? Because it was two-tired.",
+            "What do you call fake spaghetti? An impasta!",
+            "Why don't scientists trust stairs? Because they're always up to something.",
+            "What do you call cheese that isn't yours? Nacho cheese!",
+            "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+            
+        ];
+
+        function displayRandomJoke() {
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            const jokeDisplay = document.getElementById("joke-display");
+            jokeDisplay.textContent = jokes[randomIndex];
+        }
+
+        function reloadJoke() {
+            displayRandomJoke();
+        }
+
+        displayRandomJoke();
+    </script>
+</body>
+</html>
